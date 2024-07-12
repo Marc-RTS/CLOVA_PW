@@ -1,0 +1,122 @@
+{
+  "criteria": [
+    {
+      "id": 1,
+      "name": "Electrical Conductivity",
+      "statusId": 7,
+      "lastMetric": {
+        "id": 1122,
+        "date": "2024-06-30T00:00:00+00:00",
+        "value": 979
+      },
+      "trigger": {
+        "id": 1,
+        "from": 0,
+        "to": 1600,
+        "ruleComparisonTypeId": 3,
+        "dataType": 2
+      },
+      "threshold": {
+        "id": 2,
+        "from": 1600,
+        "to": 6250,
+        "ruleComparisonTypeId": 3,
+        "dataType": 2
+      },
+      "yMax": 6500,
+      "yMin": 0
+    },
+    {
+      "id": 2,
+      "name": "pH Balance",
+      "statusId": 7,
+      "lastMetric": {
+        "id": 1121,
+        "date": "2024-06-30T00:00:00+00:00",
+        "value": 7.54
+      },
+      "trigger": {
+        "id": 3,
+        "from": 7,
+        "to": 8.7,
+        "ruleComparisonTypeId": 1,
+        "dataType": 2
+      },
+      "threshold": {
+        "id": 4,
+        "from": 6,
+        "to": 9,
+        "ruleComparisonTypeId": 1,
+        "dataType": 2
+      },
+      "yMax": 10,
+      "yMin": 5
+    },
+    {
+      "id": 3,
+      "name": "Magnesium",
+      "statusId": 1,
+      "lastMetric": null,
+      "trigger": {
+        "id": 5,
+        "from": 0,
+        "to": 160,
+        "ruleComparisonTypeId": 3,
+        "dataType": 2
+      },
+      "threshold": {
+        "id": 6,
+        "from": 160,
+        "to": 1000,
+        "ruleComparisonTypeId": 3,
+        "dataType": 2
+      },
+      "yMax": 1250,
+      "yMin": 0
+    },
+    {
+      "id": 5,
+      "name": "Nitrates",
+      "statusId": 1,
+      "lastMetric": null,
+      "trigger": {
+        "id": 9,
+        "from": 0,
+        "to": 30,
+        "ruleComparisonTypeId": 3,
+        "dataType": 2
+      },
+      "threshold": {
+        "id": 10,
+        "from": 30,
+        "to": 400,
+        "ruleComparisonTypeId": 3,
+        "dataType": 2
+      },
+      "yMax": 500,
+      "yMin": 0
+    },
+    {
+      "id": 4,
+      "name": "Sulfates",
+      "statusId": 1,
+      "lastMetric": null,
+      "trigger": {
+        "id": 7,
+        "from": 0,
+        "to": 750,
+        "ruleComparisonTypeId": 3,
+        "dataType": 2
+      },
+      "threshold": {
+        "id": 8,
+        "from": 750,
+        "to": 1000,
+        "ruleComparisonTypeId": 3,
+        "dataType": 2
+      },
+      "yMax": 1250,
+      "yMin": 0
+    }
+  ]
+}

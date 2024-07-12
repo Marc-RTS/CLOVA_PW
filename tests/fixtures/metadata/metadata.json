@@ -1,0 +1,149 @@
+{
+  "ruleComparisonTypes": [
+    {
+      "id": 1,
+      "value": "Within a range"
+    },
+    {
+      "id": 2,
+      "value": "Equals"
+    },
+    {
+      "id": 3,
+      "value": "Less than"
+    },
+    {
+      "id": 4,
+      "value": "Larger than"
+    }
+  ],
+  "ruleDataTypes": [
+    {
+      "id": 1,
+      "value": "Percentage"
+    },
+    {
+      "id": 2,
+      "value": "Numeric"
+    }
+  ],
+  "ruleTypes": [
+    {
+      "id": 1,
+      "value": "Trigger"
+    },
+    {
+      "id": 2,
+      "value": "Threshold"
+    }
+  ],
+  "metricTypes": [
+    {
+      "id": 1,
+      "value": "pH Balance",
+      "themeId": 1
+    },
+    {
+      "id": 2,
+      "value": "Electrical Conductivity",
+      "themeId": 1
+    },
+    {
+      "id": 3,
+      "value": "Nitrates",
+      "themeId": 1
+    },
+    {
+      "id": 4,
+      "value": "Magnesium",
+      "themeId": 1
+    },
+    {
+      "id": 5,
+      "value": "Sulfates",
+      "themeId": 1
+    },
+    {
+      "id": 6,
+      "value": "Avoidable Deaths",
+      "themeId": 1
+    },
+    {
+      "id": 7,
+      "value": "Water Level",
+      "themeId": 1
+    }
+  ],
+  "themeTypes": [
+    {
+      "id": 1,
+      "value": "Water"
+    },
+    {
+      "id": 2,
+      "value": "Geotechnical"
+    },
+    {
+      "id": 3,
+      "value": "Rehabilitation"
+    },
+    {
+      "id": 4,
+      "value": "Erosion"
+    }
+  ],
+  "statusTypes": [
+    {
+      "id": 1,
+      "value": "Pending"
+    },
+    {
+      "id": 2,
+      "value": "On Track"
+    },
+    {
+      "id": 3,
+      "value": "At Risk"
+    },
+    {
+      "id": 4,
+      "value": "Off Track"
+    },
+    {
+      "id": 5,
+      "value": "Threshold"
+    },
+    {
+      "id": 6,
+      "value": "Trigger"
+    },
+    {
+      "id": 7,
+      "value": "Good"
+    }
+  ],
+  "assetTypes": [
+    {
+      "id": 1,
+      "value": "Iron Ore Mine"
+    },
+    {
+      "id": 2,
+      "value": "Diamond Mine"
+    }
+  ],
+  "visibilityTypes": [
+    {
+      "id": 1,
+      "value": "Draft"
+    },
+    {
+      "id": 2,
+      "value": "Review"
+    },
+    {
+      "id": 3,
+      "value": "Active"
+    }
+  ]
+}

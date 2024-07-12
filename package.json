@@ -1,0 +1,28 @@
+{
+  "name": "clova_pw",
+  "version": "1.0.0",
+  "description": "CLOVA Playwright End to End tests",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:smoke": "playwright test -g '@smoke'",
+    "test:trace": "playwright test --trace on",
+    "test:ui:chromium": "playwright test --project=chromium",
+    "test:ui:edge": "playwright test --project=edge",
+    "test:api": "playwright test --project=api",
+    "allure-report": "allure generate ./allure-results --clean && allure open",
+    "test-html-report": "playwright test --reporter=html",
+    "test-json-report": "PLAYWRIGHT_JSON_OUTPUT_NAME=results.json playwright test --browser=chromium --reporter=json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.43.1",
+    "@types/lodash": "4.14.202",
+    "@types/node": "^20.12.7",
+    "allure-playwright": "2.12.2",
+    "dotenv": "16.4.5",
+    "lodash": "4.17.21"
+  }
+}

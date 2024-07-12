@@ -1,0 +1,313 @@
+{
+  "domains": [
+    {
+      "id": 2,
+      "path": [],
+      "nodeType": "Asset",
+      "name": "Argyle Diamond Mine",
+      "currentStatusId": 4,
+      "forecastStatusId": 2,
+      "themeTypeId": null,
+      "domainCode": null,
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 3,
+      "path": ["Gap Dam"],
+      "nodeType": "Domain",
+      "name": "Gap Dam",
+      "currentStatusId": 7,
+      "forecastStatusId": 2,
+      "themeTypeId": null,
+      "domainCode": "",
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 4,
+      "path": ["Waste Rock Landform"],
+      "nodeType": "Domain",
+      "name": "Waste Rock Landform",
+      "currentStatusId": 5,
+      "forecastStatusId": 4,
+      "themeTypeId": null,
+      "domainCode": "",
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 5,
+      "path": ["Open Pit & Underground"],
+      "nodeType": "Domain",
+      "name": "Open Pit & Underground",
+      "currentStatusId": 1,
+      "forecastStatusId": 2,
+      "themeTypeId": null,
+      "domainCode": "",
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 6,
+      "path": ["AK1 Tailings Storage Facility"],
+      "nodeType": "Domain",
+      "name": "AK1 Tailings Storage Facility",
+      "currentStatusId": 1,
+      "forecastStatusId": 2,
+      "themeTypeId": null,
+      "domainCode": "",
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 7,
+      "path": ["Wesley Springs"],
+      "nodeType": "Domain",
+      "name": "Wesley Springs",
+      "currentStatusId": 6,
+      "forecastStatusId": 3,
+      "themeTypeId": null,
+      "domainCode": "",
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 8,
+      "path": ["Alluvial Areas"],
+      "nodeType": "Domain",
+      "name": "Alluvial Areas",
+      "currentStatusId": 1,
+      "forecastStatusId": 3,
+      "themeTypeId": null,
+      "domainCode": "",
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 9,
+      "path": ["Infrastructure"],
+      "nodeType": "Domain",
+      "name": "Infrastructure",
+      "currentStatusId": 1,
+      "forecastStatusId": 4,
+      "themeTypeId": null,
+      "domainCode": "",
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 10,
+      "path": ["Gap Dam", "Gap Dam"],
+      "nodeType": "Subdomain",
+      "name": "Gap Dam",
+      "currentStatusId": 7,
+      "forecastStatusId": 3,
+      "themeTypeId": null,
+      "domainCode": "",
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 11,
+      "path": ["Waste Rock Landform", "Limestone Creek"],
+      "nodeType": "Subdomain",
+      "name": "Limestone Creek",
+      "currentStatusId": 7,
+      "forecastStatusId": 2,
+      "themeTypeId": null,
+      "domainCode": "",
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 12,
+      "path": ["Waste Rock Landform", "Smoke Creek"],
+      "nodeType": "Subdomain",
+      "name": "Smoke Creek",
+      "currentStatusId": 6,
+      "forecastStatusId": 3,
+      "themeTypeId": null,
+      "domainCode": "",
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 13,
+      "path": ["Open Pit & Underground", "Pit Lake"],
+      "nodeType": "Subdomain",
+      "name": "Pit Lake",
+      "currentStatusId": 1,
+      "forecastStatusId": 2,
+      "themeTypeId": null,
+      "domainCode": "",
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 14,
+      "path": ["AK1 Tailings Storage Facility", "AK1 TSF"],
+      "nodeType": "Subdomain",
+      "name": "AK1 TSF",
+      "currentStatusId": 1,
+      "forecastStatusId": 2,
+      "themeTypeId": null,
+      "domainCode": "",
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 15,
+      "path": ["Wesley Springs", "Wesley Springs"],
+      "nodeType": "Subdomain",
+      "name": "Wesley Springs",
+      "currentStatusId": 6,
+      "forecastStatusId": 3,
+      "themeTypeId": null,
+      "domainCode": "",
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 16,
+      "path": ["Gap Dam", "Gap Dam", "Water"],
+      "nodeType": "Theme",
+      "name": "Water",
+      "currentStatusId": 7,
+      "forecastStatusId": 3,
+      "themeTypeId": 1,
+      "domainCode": null,
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": {
+        "type": "Point",
+        "coordinates": [128.3890413, -16.68536684]
+      }
+    },
+    {
+      "id": 17,
+      "path": ["Waste Rock Landform", "Limestone Creek", "Water"],
+      "nodeType": "Theme",
+      "name": "Water",
+      "currentStatusId": 7,
+      "forecastStatusId": 2,
+      "themeTypeId": 1,
+      "domainCode": null,
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": {
+        "type": "Point",
+        "coordinates": [128.4630878, -16.70177086]
+      }
+    },
+    {
+      "id": 18,
+      "path": ["Waste Rock Landform", "Smoke Creek", "Water"],
+      "nodeType": "Theme",
+      "name": "Water",
+      "currentStatusId": 6,
+      "forecastStatusId": 3,
+      "themeTypeId": 1,
+      "domainCode": null,
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": {
+        "type": "Point",
+        "coordinates": [128.4569746, -16.60441744]
+      }
+    },
+    {
+      "id": 19,
+      "path": ["Open Pit & Underground", "Pit Lake", "Water"],
+      "nodeType": "Theme",
+      "name": "Water",
+      "currentStatusId": 1,
+      "forecastStatusId": 2,
+      "themeTypeId": 1,
+      "domainCode": null,
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 20,
+      "path": ["AK1 Tailings Storage Facility", "AK1 TSF", "Water"],
+      "nodeType": "Theme",
+      "name": "Water",
+      "currentStatusId": 1,
+      "forecastStatusId": 2,
+      "themeTypeId": 1,
+      "domainCode": null,
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": {
+        "type": "Point",
+        "coordinates": [128.460774, -16.701848]
+      }
+    },
+    {
+      "id": 21,
+      "path": ["Wesley Springs", "Wesley Springs", "Water"],
+      "nodeType": "Theme",
+      "name": "Water",
+      "currentStatusId": 6,
+      "forecastStatusId": 3,
+      "themeTypeId": 1,
+      "domainCode": null,
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 22,
+      "path": ["Waste Rock Landform", "Wesley Creek"],
+      "nodeType": "Subdomain",
+      "name": "Wesley Creek",
+      "currentStatusId": 5,
+      "forecastStatusId": 4,
+      "themeTypeId": null,
+      "domainCode": "",
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": null
+    },
+    {
+      "id": 23,
+      "path": ["Waste Rock Landform", "Wesley Creek", "Water"],
+      "nodeType": "Theme",
+      "name": "Water",
+      "currentStatusId": 5,
+      "forecastStatusId": 4,
+      "themeTypeId": 1,
+      "domainCode": null,
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": {
+        "type": "Point",
+        "coordinates": [128.3808937, -16.7456713]
+      }
+    },
+    {
+      "id": 35,
+      "path": ["Open Pit & Underground", "Pit Lake", "Geotechnical"],
+      "nodeType": "Theme",
+      "name": "Geotechnical",
+      "currentStatusId": 1,
+      "forecastStatusId": 2,
+      "themeTypeId": 2,
+      "domainCode": null,
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": {
+        "type": "Point",
+        "coordinates": [128.4069836, -16.62441834]
+      }
+    },
+    {
+      "id": 36,
+      "path": ["Open Pit & Underground", "Pit Lake", "Rehabilitation"],
+      "nodeType": "Theme",
+      "name": "Rehabilitation",
+      "currentStatusId": 1,
+      "forecastStatusId": 2,
+      "themeTypeId": 3,
+      "domainCode": null,
+      "updatedOn": "2024-05-01T00:00:00+10:00",
+      "geoLocation": {
+        "type": "Point",
+        "coordinates": [128.4269836, -16.60441834]
+      }
+    }
+  ]
+}
