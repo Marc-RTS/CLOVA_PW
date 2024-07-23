@@ -3,10 +3,15 @@ export default interface Criterion {
   name: string;
   statusId: number;
   lastMetric: LastMetric | null;
+  forecastStatusId: number;
+  lastForecast: LastForecast | null;
   trigger: Trigger;
   threshold: Trigger;
   yMax: number;
   yMin: number;
+  statusOrder: number;
+  forecastStatusOrder: number;
+  metricTypeId: number;
 }
 
 interface Trigger {
@@ -21,4 +26,10 @@ interface LastMetric {
   id: number;
   date: string;
   value: number | null;
+}
+
+interface LastForecast {
+  id: number;
+  date: string;
+  q50: number | null;
 }

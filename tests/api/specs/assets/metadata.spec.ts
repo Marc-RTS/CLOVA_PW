@@ -7,10 +7,8 @@ test.describe('Metadata', () => {
   const apiToken = fs.readFileSync(API_TOKEN_PATH, 'utf-8');
   test.use({
     extraHTTPHeaders: {
-      Accept: '*/*',
       Authorization: `Bearer ${apiToken}`,
     },
-    ignoreHTTPSErrors: true,
   });
   test('test metadata response to be ok 200', async ({ request, fxMetadata }) => {
     const response = await request.get(`api/Metadata`);
@@ -37,6 +35,7 @@ test.describe('Metadata', () => {
       expect(d).toHaveProperty('id');
       expect(d).toHaveProperty('value');
       expect(d).toHaveProperty('themeId');
+      expect(d).toHaveProperty('roundingDecimalPoint');
     });
     body.ruleComparisonTypes.forEach((d) => {
       expect(d).toHaveProperty('id');

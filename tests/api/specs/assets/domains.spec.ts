@@ -10,10 +10,8 @@ test.describe('Domains', () => {
   const apiToken = fs.readFileSync(API_TOKEN_PATH, 'utf-8');
   test.use({
     extraHTTPHeaders: {
-      Accept: '*/*',
       Authorization: `Bearer ${apiToken}`,
     },
-    ignoreHTTPSErrors: true,
   });
   test('test domains response to be ok 200', async ({ request, fxAssets }) => {
     const asset = fxAssets.generateAssets();

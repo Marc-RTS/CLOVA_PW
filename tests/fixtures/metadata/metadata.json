@@ -41,37 +41,44 @@
     {
       "id": 1,
       "value": "pH Balance",
-      "themeId": 1
+      "themeId": 1,
+      "roundingDecimalPoint": 1
     },
     {
       "id": 2,
       "value": "Electrical Conductivity",
-      "themeId": 1
+      "themeId": 1,
+      "roundingDecimalPoint": 0
     },
     {
       "id": 3,
       "value": "Nitrates",
-      "themeId": 1
+      "themeId": 1,
+      "roundingDecimalPoint": 1
     },
     {
       "id": 4,
       "value": "Magnesium",
-      "themeId": 1
+      "themeId": 1,
+      "roundingDecimalPoint": 1
     },
     {
       "id": 5,
       "value": "Sulfates",
-      "themeId": 1
+      "themeId": 1,
+      "roundingDecimalPoint": 1
     },
     {
       "id": 6,
       "value": "Avoidable Deaths",
-      "themeId": 1
+      "themeId": 1,
+      "roundingDecimalPoint": 0
     },
     {
       "id": 7,
       "value": "Water Level",
-      "themeId": 1
+      "themeId": 1,
+      "roundingDecimalPoint": 0
     }
   ],
   "themeTypes": [

@@ -7,10 +7,8 @@ test.describe('Criteria', () => {
   const apiToken = fs.readFileSync(API_TOKEN_PATH, 'utf-8');
   test.use({
     extraHTTPHeaders: {
-      Accept: '*/*',
       Authorization: `Bearer ${apiToken}`,
     },
-    ignoreHTTPSErrors: true,
   });
   test('test criteria response to be ok 200', async ({ request, fxDomains }) => {
     const domain = fxDomains.generateDefaultDomains().domains.find((e) => e.nodeType === 'Theme');

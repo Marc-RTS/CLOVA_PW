@@ -43,22 +43,22 @@ test.describe('ADO-32515 Criteria Insight Panel', () => {
     const phBalance = waterCriteria.criteria.find((e) => e.name === 'pH Balance');
 
     await criteriaPanel.selectCriteria(`${ec?.name}`);
-    expect(await criteriaPanel.getCriteriaLastValue()).toHaveText(`${ec?.lastMetric?.value}`);
+    expect(await criteriaPanel.getCriteriaLastValue()).toHaveText(`${ec?.lastMetric?.value?.toFixed()}`);
     expect(await criteriaPanel.getTriggerValue()).toHaveText(`${ec?.trigger.to.toString()}`);
     expect(await criteriaPanel.getThresholdValue()).toHaveText(`${ec?.threshold.to.toString()}`);
     await criteriaPanel.selectCriteria(`${phBalance?.name}`);
     await criteriaPanel.waitChartDataLineTobeAttached();
-    await expect(await criteriaPanel.getCriteriaLastValue()).toHaveText(`${phBalance?.lastMetric?.value?.toString()}`);
-    await expect(await criteriaPanel.getTriggerValue()).toHaveText(`${phBalance?.trigger.from} - ${phBalance?.trigger.to}`);
-    await expect(await criteriaPanel.getThresholdValue()).toHaveText(`${phBalance?.threshold.from} - ${phBalance?.threshold.to}`);
+    await expect(await criteriaPanel.getCriteriaLastValue()).toHaveText(`${phBalance?.lastMetric?.value?.toFixed(1)}`);
+    await expect(await criteriaPanel.getTriggerValue()).toHaveText(`${phBalance?.trigger.from.toFixed(1)} - ${phBalance?.trigger.to.toFixed(1)}`);
+    await expect(await criteriaPanel.getThresholdValue()).toHaveText(`${phBalance?.threshold.from.toFixed(1)} - ${phBalance?.threshold.to.toFixed(1)}`);
   });
-  test('User can view data table record for a date', async ({ assetPage, fxMetrics, dataTable }) => {
+  test('User can view data table record for a date', async ({ fxMetrics, dataTable }) => {
     await expect(await dataTable.getMetricsTableRowStatus(1)).toHaveText(STATUSETYPES[fxMetrics.generateMetrics().metrics[0].statusId]);
-    await expect(await dataTable.getMetricsTableRowValue(1)).toHaveText(fxMetrics.generateMetrics().metrics[0].value.toString());
+    await expect(await dataTable.getMetricsTableRowValue(1)).toHaveText(fxMetrics.generateMetrics().metrics[0].value.toFixed());
     await expect(await dataTable.getMetricsTableRowDate(1)).toHaveText('09 Jun 2024'); //fixme
     await expect(await dataTable.getMetricsTableRowSource(1)).toHaveText('');
     await expect(await dataTable.getMetricsTableRowStatus(2)).toHaveText(STATUSETYPES[fxMetrics.generateMetrics().metrics[1].statusId]);
-    await expect(await dataTable.getMetricsTableRowValue(2)).toHaveText(fxMetrics.generateMetrics().metrics[1].value.toString());
+    await expect(await dataTable.getMetricsTableRowValue(2)).toHaveText(fxMetrics.generateMetrics().metrics[1].value.toFixed());
     await expect(await dataTable.getMetricsTableRowDate(2)).toHaveText('02 Jun 2024'); //fixme
     await expect(await dataTable.getMetricsTableRowSource(2)).toHaveText('');
   });

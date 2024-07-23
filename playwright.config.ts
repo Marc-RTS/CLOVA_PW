@@ -31,7 +31,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
 
   // Opt out of parallel tests on CI.
-  workers: 14, //process.env.CI ? 1 : undefined,
+  workers: 16, //process.env.CI ? 1 : undefined,
 
   // Each test is given 30 seconds.
   timeout: 60000,
@@ -81,6 +81,12 @@ export default defineConfig({
       name: 'api',
       testDir: './tests/api',
       dependencies: ['setup'],
+      use: {
+        extraHTTPHeaders: {
+          Accept: '*/*',
+        },
+        ignoreHTTPSErrors: true,
+      },
     },
     // {
     //   name: 'firefox',

@@ -1,4 +1,3 @@
-import Metrics from '.';
 import { IMetrics } from '../../../interfaces';
 import fxMetrics from './metrics.json';
 import _ from 'lodash';
