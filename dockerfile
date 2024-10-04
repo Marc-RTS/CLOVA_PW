@@ -1,8 +1,8 @@
-# Get the base image of Node version 16
+# Get the base image of Node version
 FROM node:20
 
 # Get the latest version of Playwright
-FROM  mcr.microsoft.com/playwright:v1.45.1-jammy
+FROM  mcr.microsoft.com/playwright:v1.43.1-jammy
 
 # Set working directory
 WORKDIR /app
@@ -19,6 +19,6 @@ COPY .env /app/
 EXPOSE 9222
 
 # Install dependencies
-RUN npx -y playwright@1.45.1 install --with-deps
+RUN npx -y playwright@1.43.1 install --with-deps
 RUN npx playwright install msedge
 RUN npm install

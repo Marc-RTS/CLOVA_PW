@@ -33,7 +33,6 @@ test.describe('Criteria', () => {
       expect(c).toHaveProperty('yMax');
       expect(c).toHaveProperty('yMin');
     });
-    //test response body schema and values if fields and values are strictly equal
   });
   test.fixme('test criteria not found response', async ({ request }) => {
     const invalidId = 999;

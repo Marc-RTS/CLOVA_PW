@@ -14,6 +14,7 @@ import SideNavigation from '../pages/common/side-navigation';
 import Poppers from '../pages/common/poppers';
 import Metadata from '../../fixtures/metadata';
 import AuthenticateAPI from '../support/authenticate';
+import Map from '../pages/assets/map';
 
 type clovaFixtures = {
   mock: Mock;
@@ -30,6 +31,7 @@ type clovaFixtures = {
   // sidebar fixtures
   criteriaPanel: CriteriaPanel;
   dataTable: DataTable;
+  map: Map;
   // data fixtures
   fxAssets: Assets;
   fxDomains: Domains;
@@ -69,6 +71,10 @@ export const test = base.extend<clovaFixtures>({
   sideNavigation: async ({ page }, use) => {
     const sideNavigation = new SideNavigation(page);
     await use(sideNavigation);
+  },
+  map: async ({ page }, use) => {
+    const map = new Map(page);
+    await use(map);
   },
   // popper fixtures
   poppers: async ({ page }, use) => {

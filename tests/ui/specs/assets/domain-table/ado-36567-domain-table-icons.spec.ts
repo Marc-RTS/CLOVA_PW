@@ -35,11 +35,11 @@ test.describe('ADO-36567 Domain Table Icons', () => {
     await assetPage.expandDomainSubDomain('AK1 Tailings Storage Facility');
     await assetPage.expandDomainSubDomain('AK1 TSF');
     await expect(await assetPage.getIconTooltip('Good')).toBeVisible();
-    await expect(await assetPage.getIconTooltip('On Track')).toBeVisible();
+    // await expect(await assetPage.getIconTooltip('On Track')).toBeVisible(); enable after H2O 1.0 Release
     await expect(await assetPage.getIconTooltip('Trigger')).toBeVisible();
-    await expect(await assetPage.getIconTooltip('At Risk')).toBeVisible();
+    // await expect(await assetPage.getIconTooltip('At Risk')).toBeVisible(); enable after H2O 1.0 Release
     await expect(await assetPage.getIconTooltip('Threshold')).toBeVisible();
-    await expect(await assetPage.getIconTooltip('Off Track')).toBeVisible();
+    // await expect(await assetPage.getIconTooltip('Off Track')).toBeVisible(); enable after H2O 1.0 Release
     await expect(await assetPage.getIconTooltip('Pending')).toBeVisible();
   });
 });

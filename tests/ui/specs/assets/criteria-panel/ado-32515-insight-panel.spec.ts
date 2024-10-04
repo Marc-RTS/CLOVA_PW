@@ -23,18 +23,19 @@ test.describe('ADO-32515 Criteria Insight Panel', () => {
     await assetPage.criteriaPanel.waitChartAttached();
     await assetPage.criteriaPanel.dataTable.waitDataTableAttached();
   });
-  test('User can view more criteria insights on the side drawer', async ({ assetPage, fxDomains }) => {
+  test('User can view more criteria insights on the side drawer', async ({ assetPage, fxDomains, criteriaPanel }) => {
     const asset = fxDomains.generateDefaultDomains().domains.find((e) => e.nodeType === 'Theme' && e.name === 'Water');
-    await expect(await assetPage.criteriaPanel.getDomain()).toHaveText(`${asset?.path.at(0)}`);
-    await expect(await assetPage.criteriaPanel.getSubDomain()).toHaveText(`${asset?.path.at(1)}`);
-    await expect(await assetPage.criteriaPanel.getCriteriaDropdown()).toBeVisible();
-    await expect(await assetPage.criteriaPanel.getThemeWaterIcon()).toBeVisible();
-    await expect(await assetPage.criteriaPanel.getCriteriaLastValue()).toBeVisible();
-    await expect(await assetPage.criteriaPanel.getTriggerValue()).toBeVisible();
-    await expect(await assetPage.criteriaPanel.getThresholdValue()).toBeVisible();
-    await expect(await assetPage.criteriaPanel.getChart()).toBeVisible();
-    await expect(await assetPage.criteriaPanel.getMetricsFilter()).toBeVisible();
-    await expect(await assetPage.criteriaPanel.dataTable.getMetricsTable()).toBeVisible();
+
+    await expect(await criteriaPanel.getDomain()).toHaveText(`${asset?.path.at(0)}`);
+    await expect(await criteriaPanel.getSubDomain()).toHaveText(`${asset?.path.at(1)}`);
+    await expect(await criteriaPanel.getCriteriaDropdown()).toBeVisible();
+    await expect(await criteriaPanel.getThemeWaterIcon()).toBeVisible();
+    await expect(await criteriaPanel.getCriteriaLastValue()).toBeVisible();
+    await expect(await criteriaPanel.getTriggerValue()).toBeVisible();
+    await expect(await criteriaPanel.getThresholdValue()).toBeVisible();
+    await expect(await criteriaPanel.getChart()).toBeVisible();
+    await expect(await criteriaPanel.getMetricsFilter()).toBeVisible();
+    await expect(await criteriaPanel.dataTable.getMetricsTable()).toBeVisible();
   });
 
   test('User can view related value, trigger and threshold of the selected criteria', async ({ criteriaPanel, fxWaterCriteria }) => {
@@ -46,6 +47,7 @@ test.describe('ADO-32515 Criteria Insight Panel', () => {
     expect(await criteriaPanel.getCriteriaLastValue()).toHaveText(`${ec?.lastMetric?.value?.toFixed()}`);
     expect(await criteriaPanel.getTriggerValue()).toHaveText(`${ec?.trigger.to.toString()}`);
     expect(await criteriaPanel.getThresholdValue()).toHaveText(`${ec?.threshold.to.toString()}`);
+
     await criteriaPanel.selectCriteria(`${phBalance?.name}`);
     await criteriaPanel.waitChartDataLineTobeAttached();
     await expect(await criteriaPanel.getCriteriaLastValue()).toHaveText(`${phBalance?.lastMetric?.value?.toFixed(1)}`);
@@ -53,13 +55,14 @@ test.describe('ADO-32515 Criteria Insight Panel', () => {
     await expect(await criteriaPanel.getThresholdValue()).toHaveText(`${phBalance?.threshold.from.toFixed(1)} - ${phBalance?.threshold.to.toFixed(1)}`);
   });
   test('User can view data table record for a date', async ({ fxMetrics, dataTable }) => {
-    await expect(await dataTable.getMetricsTableRowStatus(1)).toHaveText(STATUSETYPES[fxMetrics.generateMetrics().metrics[0].statusId]);
-    await expect(await dataTable.getMetricsTableRowValue(1)).toHaveText(fxMetrics.generateMetrics().metrics[0].value.toFixed());
-    await expect(await dataTable.getMetricsTableRowDate(1)).toHaveText('09 Jun 2024'); //fixme
-    await expect(await dataTable.getMetricsTableRowSource(1)).toHaveText('');
-    await expect(await dataTable.getMetricsTableRowStatus(2)).toHaveText(STATUSETYPES[fxMetrics.generateMetrics().metrics[1].statusId]);
-    await expect(await dataTable.getMetricsTableRowValue(2)).toHaveText(fxMetrics.generateMetrics().metrics[1].value.toFixed());
-    await expect(await dataTable.getMetricsTableRowDate(2)).toHaveText('02 Jun 2024'); //fixme
-    await expect(await dataTable.getMetricsTableRowSource(2)).toHaveText('');
+    const metricsData = fxMetrics.generateMetrics();
+    const rows = await dataTable.getDataTableRowCount();
+    for (let index = 0; index < rows; index++) {
+      let rowNumber = index + 1;
+      await expect(await dataTable.getMetricsTableRowStatus(rowNumber)).toHaveText(STATUSETYPES[metricsData.metrics[index].statusId]);
+      await expect(await dataTable.getMetricsTableRowValue(rowNumber)).toHaveText(metricsData.metrics[index].value.toFixed());
+      await expect(await dataTable.getMetricsTableRowDate(rowNumber)).toHaveText(metricsData.metrics[index].date);
+      await expect(await dataTable.getMetricsTableRowSource(rowNumber)).toHaveText('');
+    }
   });
 });

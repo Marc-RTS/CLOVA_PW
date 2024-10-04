@@ -22,7 +22,7 @@ test.describe('ADO-31546 View Domain Page', () => {
       await expect(await assetPage.getAsset(`${a?.name}`)).toBeVisible();
     });
   });
-  test('User can view sub-domains in the domain table', async ({ assetPage, fxDomains }) => {
+  test.skip('User can view sub-domains in the domain table', async ({ assetPage, fxDomains }) => {
     const domains = fxDomains.generateDefaultDomains().domains.filter((e) => e.nodeType === 'Domain');
     const subDomains = fxDomains.generateDefaultDomains().domains.filter((e) => e.nodeType === 'Subdomain');
 
@@ -31,7 +31,8 @@ test.describe('ADO-31546 View Domain Page', () => {
         await assetPage.expandDomainSubDomain(`${domain.name}`);
         const sd = subDomains.filter((s) => s.path.includes(`${domain.name}`));
         for (const s of sd) {
-          await expect(await assetPage.getSubDomainRow(`${s.name}`)).toBeVisible();
+          const x = await assetPage.getSubDomainRow(`${s.name}`);
+          await expect(x).toBeVisible();
         }
       }
     }

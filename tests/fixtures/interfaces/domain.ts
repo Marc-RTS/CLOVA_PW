@@ -7,7 +7,7 @@ export default interface Domain {
   forecastStatusId: number;
   themeTypeId: number | null;
   domainCode: string | null;
-  updatedOn: string;
+  updatedOn: string | null;
   geoLocation: GeoLocation | null;
 }
 

@@ -26,6 +26,7 @@ export default class CriteriaPanel extends BasePage {
   readonly dataTable: DataTable;
   readonly metricsFilter: Locator;
   readonly chartLoadingPaper: Locator;
+  readonly victoryChart: Locator;
 
   constructor(page: Page) {
     super(page);
@@ -81,6 +82,12 @@ export default class CriteriaPanel extends BasePage {
   async getCriteriaPanel() {
     return this.criteriaInsightPanel;
   }
+  async getCriteriaPanelVisibility() {
+    await this.page.waitForLoadState('domcontentloaded', { timeout: 3000 });
+    return await this.criteriaInsightPanel.evaluate((element) => {
+      return window.getComputedStyle(element).getPropertyValue('visibility');
+    });
+  }
   async closeDrawer() {
     return await this.closeOutlinedIcon.click();
   }
@@ -90,8 +97,11 @@ export default class CriteriaPanel extends BasePage {
   async getCriteriaDropdownMenu() {
     return this.criteriaDropdownMenu;
   }
-  async getCriteriaDropdownMenuText(option: number) {
+  async getCriteriaDropdownMenuByPosition(option: number) {
     return this.criteriaDropdownMenu.getByRole('option').nth(option);
+  }
+  async getCriteriaDropdownMenuOptions() {
+    return await this.criteriaDropdownMenu.getByRole('option').allTextContents();
   }
   async getCriteriaDropdownSelected() {
     return await this.criteriaDropdown.textContent();
@@ -135,22 +145,18 @@ export default class CriteriaPanel extends BasePage {
   async getChartDataLine() {
     return this.chartDataLine;
   }
+  async getChartDataLinePath() {
+    return this.chartDataLine.locator('path').evaluate((element) => {
+      return window.getComputedStyle(element).getPropertyValue('d');
+    });
+  }
   async selectCriteria(option: string) {
     await this.criteriaDropdown.click();
-    return await this.criteriaDropdownMenu.getByRole('option').getByText(`${option}`).click();
+    await this.criteriaDropdownMenu.getByRole('option').getByText(`${option}`).click();
   }
-  // async clickMetricsFilter(filter: string) {
-  //   await this.metricsFilter.getByTestId(`criteria-sidebar-data-filter-button-${filter}`).click();
-  // }
-  // async getChartYAxisValues() {
-  //   return this.chartYAxis.allTextContents();
-  // }
   async getChartYAxisValues() {
     return this.chartYAxis.locator('g').allTextContents();
   }
-  // async getChartXAxisValues() {
-  //   return this.chartXAxis.allTextContents();
-  // }
   async getChartXAxisValues() {
     return this.chartXAxis.locator('g').allTextContents();
   }

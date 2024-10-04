@@ -27,17 +27,17 @@ test.describe('ADO-32515 Insight Panel Criteria Dropdown', () => {
     const selected = (await criteriaPanel.getCriteriaDropdownSelected()) ?? '';
     await criteriaPanel.clickCriteriaDropdown();
     await expect(await criteriaPanel.getCriteriaDropdownMenu()).toBeVisible();
-    await expect(await criteriaPanel.getCriteriaDropdownMenuText(0)).toBeVisible();
-    await expect(await criteriaPanel.getCriteriaDropdownMenuText(0)).toHaveText(selected);
+    await expect(await criteriaPanel.getCriteriaDropdownMenuByPosition(0)).toBeVisible();
+    await expect(await criteriaPanel.getCriteriaDropdownMenuByPosition(0)).toHaveText(selected);
   });
 
   test('User can view different criteria options', async ({ criteriaPanel, fxWaterCriteria }) => {
     await criteriaPanel.clickCriteriaDropdown();
     await expect(await criteriaPanel.getCriteriaDropdownMenu()).toBeVisible();
     const arr = fxWaterCriteria.generateWaterCriteria().criteria;
-    arr.forEach(async (e, index) => {
-      await expect(await criteriaPanel.getCriteriaDropdownMenuText(index)).toBeVisible();
-      await expect(await criteriaPanel.getCriteriaDropdownMenuText(index)).toHaveText(`${e.name}`);
+    const options = await criteriaPanel.getCriteriaDropdownMenuOptions();
+    arr.forEach((e) => {
+      expect(options, `${e.name} is visible`).toContainEqual(`${e.name}`);
     });
   });
 });

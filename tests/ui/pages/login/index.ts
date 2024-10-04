@@ -31,18 +31,18 @@ export default class LoginPage extends BasePage {
 
     await page.goto(baseUrl);
     await page.waitForLoadState();
-    //if (process.env.VPNACCESS) {
-    await page.getByRole('link', { name: 'Cancel' }).click();
-    // //}
-    await page.waitForURL('**/login.microsoftonline.com/**');
-    await page.getByAltText('Organization banner logo').waitFor({ state: 'visible' });
-    await page.getByPlaceholder('someone@example.com').fill(`${username}@riotinto.com`);
-    await page.getByRole('button', { name: 'Next' }).click();
+    if (process.env.VPNACCESS) {
+      await page.getByRole('link', { name: 'Cancel' }).click();
+      await page.waitForURL('**/login.microsoftonline.com/**');
+      await page.getByAltText('Organization banner logo').waitFor({ state: 'visible' });
+      await page.getByPlaceholder('someone@example.com').fill(`${username}@riotinto.com`);
+      await page.getByRole('button', { name: 'Next' }).click();
 
-    await page.waitForLoadState();
-    await page.getByPlaceholder('Password').fill(password);
-    await page.getByRole('button', { name: 'Sign in' }).click();
-    await page.waitForLoadState();
+      await page.waitForLoadState();
+      await page.getByPlaceholder('Password').fill(password);
+      await page.getByRole('button', { name: 'Sign in' }).click();
+      await page.waitForLoadState();
+    }
 
     await page.waitForSelector('data-testid=home-link');
     await page.getByText('Clova').isVisible();

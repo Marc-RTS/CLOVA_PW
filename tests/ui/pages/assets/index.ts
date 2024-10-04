@@ -30,6 +30,9 @@ export default class AssetPage extends BasePage {
   readonly subDomainRow: Locator;
   readonly themeCurrentIcon: Locator;
   readonly themeForecastIcon: Locator;
+  readonly mapViewFilterBtn: Locator;
+  readonly domainsTableViewFilterBtn: Locator;
+  // await page.getByTestId('map-view-filter-button').click();
 
   constructor(page: Page) {
     super(page);
@@ -60,6 +63,8 @@ export default class AssetPage extends BasePage {
     this.subDomainRow = this.page.locator('.MuiDataGrid-row--2');
     this.themeCurrentIcon = this.page.getByTestId('current-theme-chip');
     this.themeForecastIcon = this.page.getByTestId('current-theme-chip');
+    this.mapViewFilterBtn = this.page.getByTestId('map-view-filter-button');
+    this.domainsTableViewFilterBtn = this.page.getByTestId('domains-table-filter-button');
   }
 
   async init(): Promise<this> {
@@ -70,6 +75,9 @@ export default class AssetPage extends BasePage {
   }
   async getDomainAssetStatus() {
     return this.domainAssetStatus.locator('span');
+  }
+  async getDomainTable() {
+    return this.domainsTable;
   }
   async waitForDomainTableToBeLoaded() {
     await this.domainsTable.waitFor({ state: 'visible' });
@@ -97,7 +105,9 @@ export default class AssetPage extends BasePage {
       .click();
   }
   async getSubDomainRow(name: string) {
-    return this.subDomainRow.getByRole('gridcell', { name: `${name}` });
+    const a = this.subDomainRow.getByRole('gridcell', { name: `${name}`, exact: true });
+    const b = this.subDomainRow.getByRole('gridcell', { name: `${name}` });
+    return this.subDomainRow.getByRole('gridcell', { name: `${name}`, exact: true });
   }
   async getAsset(name: string) {
     return this.page.getByRole('gridcell', { name: `${name}` });
@@ -208,5 +218,17 @@ export default class AssetPage extends BasePage {
     await this.expandDomainSubDomain(subDomain);
     await this.page.getByRole('gridcell', { name: `${theme}` }).click();
     return new CriteriaPanel(this.page);
+  }
+  async clickMapViewFilter() {
+    await this.mapViewFilterBtn.click();
+  }
+  async getMapViewFilter() {
+    return this.mapViewFilterBtn;
+  }
+  async clickTableViewFilter() {
+    await this.domainsTableViewFilterBtn.click();
+  }
+  async getTableViewFilter() {
+    return this.domainsTableViewFilterBtn;
   }
 }

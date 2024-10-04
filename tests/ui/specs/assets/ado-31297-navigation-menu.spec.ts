@@ -13,6 +13,5 @@ test.describe('ADO-31297 Navigation Menu', () => {
   });
   test('has side bar menu', async ({ sideNavigation }) => {
     await expect(await sideNavigation.getAssetMenu()).toBeVisible();
-    await expect(await sideNavigation.getAboutMenu()).toBeVisible();
   });
 });

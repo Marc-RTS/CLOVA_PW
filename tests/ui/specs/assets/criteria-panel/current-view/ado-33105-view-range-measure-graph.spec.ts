@@ -1,4 +1,4 @@
-import { test, expect } from '../../baset-test';
+import { test, expect } from '../../../baset-test';
 
 test.describe('ADO-33105 View Range Measure Graph', () => {
   test.use({ storageState: 'tests/ui/utils/.auth/serviceAccountStd.json' });

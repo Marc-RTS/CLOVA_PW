@@ -9,6 +9,8 @@ export default class DataTable extends BasePage {
   readonly rowsPerPage: Locator;
   readonly rowsList: Locator;
   readonly dataMetricsTable: Locator;
+  readonly dataMetricsTableRows: Locator;
+
   constructor(page: Page) {
     super(page);
     this.dataTable = this.page.getByTestId('criteria-sidebar-metric-table');
@@ -18,6 +20,7 @@ export default class DataTable extends BasePage {
     this.rowsPerPage = this.dataTable.getByRole('combobox');
     this.rowsList = this.page.getByRole('listbox');
     this.dataMetricsTable = this.page.getByTestId('criteria-sidebar-metric-table');
+    this.dataMetricsTableRows = this.dataMetricsTable.getByRole('row');
   }
 
   async init(): Promise<this> {
@@ -54,6 +57,9 @@ export default class DataTable extends BasePage {
   }
   async getMetricsTable() {
     return this.dataMetricsTable;
+  }
+  async getMetricsTableRows() {
+    return this.dataMetricsTableRows;
   }
   async getMetricsTableRowStatus(row: number) {
     return this.dataMetricsTable.getByRole('row').nth(row).getByRole('gridcell').nth(0).locator('span');

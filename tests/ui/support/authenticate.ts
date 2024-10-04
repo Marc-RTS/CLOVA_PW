@@ -5,9 +5,9 @@ export default class AuthenticateAPI {
     if (fs.existsSync(file)) {
       const payload = JSON.parse(fs.readFileSync(file, 'utf-8'));
       const idToken = Object.values(JSON.parse(payload))
-        .map((value: any) => JSON.parse(value))
+        .map((value: any) => (value.includes('Valid.User') ? JSON.parse(value) : 'exclude'))
         .filter((token) => token.secret);
-      return idToken[2].secret ? idToken[2].secret : null;
+      return idToken.length > 0 ? idToken[0].secret : null;
     }
   }
 }

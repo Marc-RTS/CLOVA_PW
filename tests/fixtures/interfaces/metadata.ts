@@ -14,6 +14,7 @@ interface MetricType {
   value: string;
   themeId: number;
   roundingDecimalPoint: number;
+  dataTypeId: number;
 }
 
 interface RuleComparisonType {

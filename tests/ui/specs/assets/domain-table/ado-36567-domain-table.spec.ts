@@ -1,10 +1,10 @@
 import { DOMAINTABLE_HEADERS, GEOTECHNICAL_THEME, HOMEPAGE_TITLE, REHABILITATION_THEME, WATER_THEME } from '../../../support/constants';
 import { test, expect } from '../../baset-test';
 
-test.describe('ADO-36567 Domain Data Table', () => {
+test.describe('ADO-36567 Domain Table', () => {
   test.use({ storageState: 'tests/ui/utils/.auth/serviceAccountStd.json' });
 
-  test.beforeEach('Domain Data Table', async ({ page, banner, assetPage, mock, fxAssets, fxDomains }) => {
+  test.beforeEach('Domain Table', async ({ page, banner, assetPage, mock, fxAssets, fxDomains }) => {
     const asset = fxAssets.generateAssets();
     await mock.getAssets(asset, `${asset.id}`);
     await mock.getDomains(fxDomains.generateDefaultDomains(), `${asset.id}`);
@@ -37,4 +37,7 @@ test.describe('ADO-36567 Domain Data Table', () => {
     await expect(await assetPage.getFilterGeotechnicalIcon()).toHaveText(GEOTECHNICAL_THEME);
     await expect(await assetPage.getFilterRehabilitationIcon()).toHaveText(REHABILITATION_THEME);
   });
+  test.fixme('User able to see pending on a sub-domain current status', async ({ assetPage }) => {});
+  test.fixme('User able to see pending on a domain current status', async ({ assetPage }) => {});
+  test.fixme('User able to see pending icon on a theme current status', async ({ assetPage }) => {});
 });

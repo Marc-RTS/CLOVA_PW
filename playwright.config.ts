@@ -7,7 +7,8 @@ const env = process.env.ENV;
 const baseUrl = env ? `https://${env}.clova.riotinto.com` : 'http://localhost:8080';
 const headless = process.env.HEADLESS || 'true';
 const fullyParallel = process.env.FULLY_PARALLEL || 'true';
-
+// const chromeOptions =
+//   headless == 'true' ? ['--start-maximized', '--headless=new', '--window-size=1920,1080'] : ['--start-maximized', '--window-size=1920,1080'];
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -21,6 +22,9 @@ export default defineConfig({
   // Look for test files in the "tests" directory, relative to this configuration file.
   testDir: './tests',
 
+  // path for all the snapshots
+  snapshotPathTemplate: '{testDir}/screenshots{/projectName}/{testFilePath}/{arg}{ext}',
+
   // Run all tests in parallel.
   fullyParallel: fullyParallel === 'true',
 
@@ -31,11 +35,17 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
 
   // Opt out of parallel tests on CI.
-  workers: 16, //process.env.CI ? 1 : undefined,
+  workers: 3, //process.env.CI ? 1 : undefined,
 
   // Each test is given 30 seconds.
   timeout: 60000,
-  expect: { timeout: 30000 },
+  expect: {
+    timeout: 30000,
+    toHaveScreenshot: {
+      // An acceptable amount of pixels that could be different, unset by default.
+      maxDiffPixels: 500,
+    },
+  },
 
   // Reporter to use
   reporter: [['html'], ['list'], ['allure-playwright', { detail: true, suiteTitle: true }], ['json', { outputFile: 'test-results/test-results.json' }]],
@@ -45,13 +55,18 @@ export default defineConfig({
     baseURL: baseUrl,
 
     //timeout
-    actionTimeout: 30 * 1000,
+    actionTimeout: 20 * 1000,
     navigationTimeout: 60 * 1000,
 
     // Collect trace when retrying the failed test.
     trace: 'on',
+
+    //headeed or headful setup ~ use headless for docker and ci
     headless: headless === 'true',
-    viewport: { width: 1920, height: 1080 },
+
+    // timezone setup for all tests
+    timezoneId: 'Australia/Brisbane',
+
     ignoreHTTPSErrors: true,
   },
 
@@ -72,8 +87,8 @@ export default defineConfig({
       testDir: './tests/ui',
       use: {
         ...devices['Desktop Edge'],
-        channel: 'msedge',
         viewport: { width: 1920, height: 1080 },
+        channel: 'msedge',
       },
       dependencies: ['setup'],
     },
@@ -88,6 +103,15 @@ export default defineConfig({
         ignoreHTTPSErrors: true,
       },
     },
+    // {
+    //   name: 'edge',
+    //   testDir: './tests/tests-examples',
+    //   use: {
+    //     ...devices['Desktop Edge'],
+    //     viewport: { width: 1920, height: 1080 },
+    //     channel: 'msedge',
+    //   },
+    // },
     // {
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },

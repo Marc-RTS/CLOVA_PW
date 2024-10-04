@@ -32,9 +32,10 @@ test.describe('ADO-31876 Go to side insight side panel', () => {
     await criteriaPanel.closeDrawer();
     await expect(await criteriaPanel.getCriteriaPanel()).toBeHidden();
   });
-  test('User can close to criteria panel by clicking away', async ({ criteriaPanel, common }) => {
+  test('User can close to criteria panel by clicking away', async ({ criteriaPanel, banner }) => {
     await expect(await criteriaPanel.getCriteriaPanel()).toBeVisible();
-    await common.banner.clickClovaBannerLogo();
-    await expect(await criteriaPanel.getCriteriaPanel()).toBeHidden();
+    await banner.clickClovaBannerLogo();
+    // await expect(await criteriaPanel.getCriteriaPanel()).toBeHidden();
+    expect(await criteriaPanel.getCriteriaPanelVisibility()).toContain('hidden');
   });
 });

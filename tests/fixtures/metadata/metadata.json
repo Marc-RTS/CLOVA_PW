@@ -25,6 +25,10 @@
     {
       "id": 2,
       "value": "Numeric"
+    },
+    {
+      "id": 3,
+      "value": "Boolean"
     }
   ],
   "ruleTypes": [
@@ -35,6 +39,10 @@
     {
       "id": 2,
       "value": "Threshold"
+    },
+    {
+      "id": 3,
+      "value": "No Flow"
     }
   ],
   "metricTypes": [
@@ -42,43 +50,155 @@
       "id": 1,
       "value": "pH Balance",
       "themeId": 1,
-      "roundingDecimalPoint": 1
+      "roundingDecimalPoint": 1,
+      "dataTypeId": 2
     },
     {
       "id": 2,
       "value": "Electrical Conductivity",
       "themeId": 1,
-      "roundingDecimalPoint": 0
+      "roundingDecimalPoint": 0,
+      "dataTypeId": 2
     },
     {
       "id": 3,
       "value": "Nitrates",
       "themeId": 1,
-      "roundingDecimalPoint": 1
+      "roundingDecimalPoint": 1,
+      "dataTypeId": 2
     },
     {
       "id": 4,
       "value": "Magnesium",
       "themeId": 1,
-      "roundingDecimalPoint": 1
+      "roundingDecimalPoint": 1,
+      "dataTypeId": 2
     },
     {
       "id": 5,
       "value": "Sulfates",
       "themeId": 1,
-      "roundingDecimalPoint": 1
+      "roundingDecimalPoint": 1,
+      "dataTypeId": 2
     },
     {
       "id": 6,
       "value": "Avoidable Deaths",
       "themeId": 1,
-      "roundingDecimalPoint": 0
+      "roundingDecimalPoint": 0,
+      "dataTypeId": 2
     },
     {
       "id": 7,
       "value": "Water Level",
       "themeId": 1,
-      "roundingDecimalPoint": 0
+      "roundingDecimalPoint": 0,
+      "dataTypeId": 2
+    },
+    {
+      "id": 8,
+      "value": "Fauna Presence (Native)",
+      "themeId": 3,
+      "roundingDecimalPoint": 0,
+      "dataTypeId": 3
+    },
+    {
+      "id": 9,
+      "value": "Fire-Resilient Species Presence",
+      "themeId": 3,
+      "roundingDecimalPoint": 0,
+      "dataTypeId": 3
+    },
+    {
+      "id": 10,
+      "value": "Litter Layer Establishment",
+      "themeId": 3,
+      "roundingDecimalPoint": 1,
+      "dataTypeId": 3
+    },
+    {
+      "id": 11,
+      "value": "Mean Cenchrus Ciliaris Cover (Living)",
+      "themeId": 3,
+      "roundingDecimalPoint": 1,
+      "dataTypeId": 1
+    },
+    {
+      "id": 12,
+      "value": "Mean Foliage Cover",
+      "themeId": 3,
+      "roundingDecimalPoint": 1,
+      "dataTypeId": 1
+    },
+    {
+      "id": 13,
+      "value": "Mean Number of Structural Layers",
+      "themeId": 3,
+      "roundingDecimalPoint": 1,
+      "dataTypeId": 2
+    },
+    {
+      "id": 14,
+      "value": "Mean Plant Density (Native)",
+      "themeId": 3,
+      "roundingDecimalPoint": 1,
+      "dataTypeId": 2
+    },
+    {
+      "id": 15,
+      "value": "Mean Species Richness (Native and Living)",
+      "themeId": 3,
+      "roundingDecimalPoint": 1,
+      "dataTypeId": 2
+    },
+    {
+      "id": 16,
+      "value": "Mean Weed Cover (Living)",
+      "themeId": 3,
+      "roundingDecimalPoint": 1,
+      "dataTypeId": 1
+    },
+    {
+      "id": 17,
+      "value": "N-Fixing Plants (Native)",
+      "themeId": 3,
+      "roundingDecimalPoint": 0,
+      "dataTypeId": 3
+    },
+    {
+      "id": 18,
+      "value": "New Weed Species Presence (Living)",
+      "themeId": 3,
+      "roundingDecimalPoint": 0,
+      "dataTypeId": 3
+    },
+    {
+      "id": 19,
+      "value": "Perennial Species Presence (Native and Living)",
+      "themeId": 3,
+      "roundingDecimalPoint": 0,
+      "dataTypeId": 3
+    },
+    {
+      "id": 20,
+      "value": "Plant Regeneration (Native)",
+      "themeId": 3,
+      "roundingDecimalPoint": 0,
+      "dataTypeId": 3
+    },
+    {
+      "dataTypeId": 3,
+      "id": 21,
+      "roundingDecimalPoint": 0,
+      "themeId": 2,
+      "value": "Constructed as Per Design"
+    },
+    {
+      "dataTypeId": 3,
+      "id": 22,
+      "roundingDecimalPoint": 0,
+      "themeId": 2,
+      "value": "Spillways Meet 1:1000 AEP Flood Event"
     }
   ],
   "themeTypes": [
@@ -127,6 +247,10 @@
     {
       "id": 7,
       "value": "Good"
+    },
+    {
+      "id": 8,
+      "value": "No Flow"
     }
   ],
   "assetTypes": [
